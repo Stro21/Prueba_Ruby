@@ -32,7 +32,11 @@ class Alumno
     total / @notas_alumno.length
   end
 
+  def aprobado(nota)
+    nota >= 5
+  end
+
   def alumno_aprobado
-    promedio_notas >= 5
+    aprobado(promedio_notas)
   end
 end

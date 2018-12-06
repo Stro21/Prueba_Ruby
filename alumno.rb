@@ -1,3 +1,5 @@
+require_relative 'file.rb'
+
 # rubocop:disable AsciiComments
 
 # La clase alumno que contiene el nombre y sus notas.

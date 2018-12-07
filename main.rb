@@ -8,7 +8,7 @@ require 'csv'
 #   file.push(row.to_s)
 # end
 # print file
-file = File.open("./notas_alumnos.cvs", "r")
+file = File.open("./notas_alumnos.csv", "r")
 contents = file.readlines
 file.close
 print contents

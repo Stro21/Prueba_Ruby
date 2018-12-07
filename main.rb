@@ -1,9 +1,10 @@
 require_relative 'files.rb'
 require_relative 'methods.rb'
 require_relative 'program.rb'
+require 'csv'
 
-file = File.read('notas_alumnos.csv', 'r')
-contents = file
-print contents
-puts ''
-file.close
+file = []
+CVS.foreach('notas_alumnos.csv') do |row|
+  file.push(row.to_s)
+end
+print file

@@ -43,11 +43,15 @@ def grades(file, names)
   grades
 end
 
+def a_grade(chr)
+  chr != ',' && chr != ' ' && chr != "\n"
+end
+
 def grade_list(grades)
   notas = []
   i = 0
   grades.each_char do |chr|
-    if chr != ',' && chr != ' '
+    if a_grade(chr)
       if chr == '1' && grades[i + 1] == '0'
         notas.push('10')
       else

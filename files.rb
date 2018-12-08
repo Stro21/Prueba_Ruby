@@ -12,9 +12,9 @@ end
 
 def create_array_hash(file)
   names = names(file)
-  print names
-  puts ''
   grades = grades(file, names)
+  hash = hash(names, grades)
+  hash
 end
 
 def names(file)
@@ -48,7 +48,7 @@ def grade_list(grades)
   i = 0
   grades.each_char do |chr|
     if chr != ',' && chr != ' '
-      if chr == 1 && (grades[i + 1]).is_zero?
+      if chr == '1' && grades[i + 1] == '0'
         notas.push('10')
       else
         notas.push(chr)
@@ -56,6 +56,17 @@ def grade_list(grades)
     end
     i += 1
   end
+  notas
+end
+
+def hash(names, grades)
+  i = 0
+  hash = {}
+  grades.each do |variable|
+    hash[names[i]] = variable
+    i += 1
+  end
+  hash
 end
 
 # rubocop:enable MethodLength

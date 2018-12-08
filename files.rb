@@ -2,6 +2,7 @@ require_relative 'methods.rb'
 require_relative 'program.rb'
 
 # rubocop:disable MethodLength
+# rubocop:disable For
 
 def read_file
   file = File.open('./notas_alumnos.csv', 'r')
@@ -25,7 +26,11 @@ end
 
 def get_name_file(str)
   name = ''
-  str.each_char { |chr| name += chr until chr == ',' }
+  i = 0
+  str.each_char { i += 1 until str[i] == ',' }
+  for j in 0..i - 1 do
+    names += str[j]
+  end
   name
 end
 
@@ -74,3 +79,4 @@ def hash(names, grades)
 end
 
 # rubocop:enable MethodLength
+# rubocop:enable For

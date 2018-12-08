@@ -9,3 +9,4 @@ puts ''
 llaves = alumnos.keys
 notas = alumnos.values
 puts 'Promedio de ' + llaves[0] + ' es ' + promedio(notas[0]).to_s
+puts 'Promedio de ' + llaves[1] + ' es ' + promedio(notas[1]).to_s

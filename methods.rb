@@ -26,3 +26,8 @@ end
 def inasistencias_totales(name, ina)
   puts 'Las inasistencias totales de ' + name + ' son ' + inasistencia(ina).to_s
 end
+
+def alumnos_aprobados(alumnos)
+  puts 'Los alumnos aprobados son:'
+  alumnos.each { |nombre, notas| puts nombre if aprobado(promedio(notas)) }
+end

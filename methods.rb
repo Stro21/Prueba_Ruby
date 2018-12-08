@@ -22,3 +22,7 @@ end
 def aprobado(nota)
   nota >= 5
 end
+
+def inasistencias_totales(name, ina)
+  puts 'Las inasistencias totales de ' + name + ' son ' + inasistencia(ina).to_s
+end

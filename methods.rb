@@ -6,7 +6,7 @@ def promedio(notas)
     if nota == 'A'
       sum + 1
     else
-      sum + nota.to_i
+      sum + nota
     end
   end
   p / notas.length

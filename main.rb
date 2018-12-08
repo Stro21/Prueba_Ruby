@@ -6,3 +6,6 @@ file = read_file
 alumnos = create_array_hash(file)
 print alumnos
 puts ''
+llaves = alumnos.keys
+notas = alumnos.values
+puts 'Promedio de ' + llaves[0] + ' es ' + promedio(notas[0]).to_s

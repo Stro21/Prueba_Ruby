@@ -29,7 +29,7 @@ def get_name_file(str)
   i = 0
   str.each_char { i += 1 until str[i] == ',' }
   for j in 0..i - 1 do
-    names += str[j]
+    name += str[j]
   end
   name
 end
@@ -37,11 +37,10 @@ end
 def grades(file, names)
   grades = []
   notas = ''
-  string = ''
   i = 0
   file.each do |row|
-    string = row.slice! names[i]
-    notas = grade_list(string)
+    row.slice! names[i]
+    notas = grade_list(row)
     grades.push(notas)
     i += 1
   end
@@ -58,9 +57,11 @@ def grade_list(grades)
   grades.each_char do |chr|
     if a_grade(chr)
       if chr == '1' && grades[i + 1] == '0'
-        notas.push('10')
-      else
+        notas.push(10)
+      elsif chr == 'A'
         notas.push(chr)
+      else
+        notas.push(chr.to_i)
       end
     end
     i += 1

@@ -25,6 +25,11 @@ def inicio_programa(arr_hash)
   programa(opt, arr_hash)
 end
 
+def option1(arr_hash)
+  create_files(arr_hash)
+  inicio_programa(arr_hash)
+end
+
 # Cuenta las inasistencias totales
 def option2(arr_hash)
   puts 'Las inasistencias totales de los alumnos son: '

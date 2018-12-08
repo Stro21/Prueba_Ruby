@@ -79,5 +79,14 @@ def hash(names, grades)
   hash
 end
 
+def create_files(arr_hash)
+  file = File.open('promedios_alumnos.csv', 'w')
+  file.puts "Alumno, Promedio de notas\n"
+  arr_hash.each do |arr, hash|
+    file.puts arr.to_s + ', ' + promedio(hash).to_s
+  end
+  file.close
+end
+
 # rubocop:enable MethodLength
 # rubocop:enable For

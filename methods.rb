@@ -1,4 +1,5 @@
 require_relative 'program.rb'
+require_relative 'files.rb'
 
 # Calcula el promedio de notas.
 def promedio(notas)

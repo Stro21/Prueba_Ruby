@@ -1,8 +1,9 @@
-require_relative 'methods.rb'
-require_relative 'program.rb'
-
+# rubocop:disable EndOfLine
 # rubocop:disable MethodLength
 # rubocop:disable For
+
+require_relative 'methods.rb'
+require_relative 'program.rb'
 
 def read_file
   contents = []
@@ -89,3 +90,4 @@ end
 
 # rubocop:enable MethodLength
 # rubocop:enable For
+# rubocop:enable EndOfLine

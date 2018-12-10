@@ -5,9 +5,8 @@ require_relative 'program.rb'
 # rubocop:disable For
 
 def read_file
-  file = File.open('./notas_alumnos.csv', 'r')
-  contents = file.readlines
-  file.close
+  contents = []
+  File.open('./notas_alumnos.csv', 'r') { |text| contents = text.readlines }
   contents
 end
 
@@ -80,7 +79,7 @@ def hash(names, grades)
 end
 
 def create_files(arr_hash)
-  file = File.open('promedios_alumnos.csv', 'w')
+  file = File.open('promedios_alumnos.csv', 'a')
   file.puts "Alumno, Promedio de notas\n"
   arr_hash.each do |arr, hash|
     file.puts arr.to_s + ', ' + promedio(hash).to_s

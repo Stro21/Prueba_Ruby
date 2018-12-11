@@ -12,7 +12,7 @@ def promedio(notas)
       sum + nota
     end
   end
-  (p.to_f / notas.length.to_f).round.to_i
+  (p.to_f / notas.length.to_f)
 end
 
 # Cuenta la cantidad de inasistencias totales por alumno.

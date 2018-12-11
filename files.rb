@@ -56,7 +56,6 @@ def grade_list(grades)
   i = 0
   grades.each_char do |chr|
     if a_grade(chr)
-      puts chr
       if chr == '1' && grades[i + 1] == '0'
         notas.push(10)
       elsif chr == 'A'
@@ -67,7 +66,6 @@ def grade_list(grades)
     end
     i += 1
   end
-  notas.pop
   notas
 end
 
@@ -91,9 +89,7 @@ end
 def create_files(arr_hash)
   file = File.open('promedios_alumnos.csv', 'a')
   file.puts "Alumno, Promedio de notas\n"
-  arr_hash.each do |arr, hash|
-    file.puts arr.to_s + ', ' + promedio(hash).to_s
-  end
+  arr_hash.each { |arr| file.puts hash_data(arr, :name).to_s + ', ' + promedio(hash_data(arr, :grades)).to_s }
   file.close
 end
 

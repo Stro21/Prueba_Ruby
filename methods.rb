@@ -32,3 +32,7 @@ def alumnos_aprobados(alumnos)
   puts 'Los alumnos aprobados son:'
   alumnos.each { |nombre, notas| puts nombre if aprobado(promedio(notas)) }
 end
+
+def hash_data(hash, key)
+  hash[key]
+end

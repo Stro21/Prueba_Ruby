@@ -1,6 +1,8 @@
 require_relative 'program.rb'
 require_relative 'files.rb'
 
+# rubocop:disable LineLength
+
 # Calcula el promedio de notas.
 def promedio(notas)
   p = notas.inject do |sum, nota|
@@ -30,7 +32,7 @@ end
 
 def alumnos_aprobados(alumnos)
   puts 'Los alumnos aprobados son:'
-  alumnos.each { |nombre, notas| puts nombre if aprobado(promedio(notas)) }
+  alumnos.each { |alumno| puts hash_data(alumno, :name) if aprobado(promedio(hash_data(alumno, :grades))) }
 end
 
 def hash_data(hash, key)

@@ -1,6 +1,6 @@
-# rubocop:disable EndOfLine
 # rubocop:disable MethodLength
 # rubocop:disable For
+# rubocop:disable LineLength
 
 require_relative 'methods.rb'
 require_relative 'program.rb'
@@ -48,7 +48,7 @@ def grades(file, names)
 end
 
 def a_grade(chr)
-  chr != ',' && chr != ' ' && chr != "\n" && chr != '0'
+  chr != ',' && chr != ' ' && chr != "\n" && chr != '0' && !chr.nil? && chr != ''
 end
 
 def grade_list(grades)
@@ -56,9 +56,9 @@ def grade_list(grades)
   i = 0
   grades.each_char do |chr|
     if a_grade(chr)
+      puts chr
       if chr == '1' && grades[i + 1] == '0'
         notas.push(10)
-        puts chr
       elsif chr == 'A'
         notas.push(chr)
       else
@@ -67,6 +67,7 @@ def grade_list(grades)
     end
     i += 1
   end
+  notas.pop
   notas
 end
 
@@ -98,4 +99,4 @@ end
 
 # rubocop:enable MethodLength
 # rubocop:enable For
-# rubocop:enable EndOfLine
+# rubocop:enable LineLength

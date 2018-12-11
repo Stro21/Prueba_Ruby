@@ -38,3 +38,5 @@ end
 def hash_data(hash, key)
   hash[key]
 end
+
+# rubocop:enable LineLength

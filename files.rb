@@ -48,7 +48,7 @@ def grades(file, names)
 end
 
 def a_grade(chr)
-  chr != ',' && chr != ' ' && chr != "\n"
+  chr != ',' && chr != ' ' && chr != "\n" && chr != '0'
 end
 
 def grade_list(grades)
@@ -58,6 +58,7 @@ def grade_list(grades)
     if a_grade(chr)
       if chr == '1' && grades[i + 1] == '0'
         notas.push(10)
+        puts chr
       elsif chr == 'A'
         notas.push(chr)
       else
@@ -71,11 +72,18 @@ end
 
 def hash(names, grades)
   i = 0
-  hash = {}
+  array = []
   grades.each do |variable|
-    hash[names[i]] = variable
+    array.push(hash_alumno(names[i], variable))
     i += 1
   end
+  array
+end
+
+def hash_alumno(name, grades)
+  hash = {}
+  hash[:name] = name
+  hash[:grades] = grades
   hash
 end
 

@@ -1,4 +1,5 @@
 # rubocop:disable MethodLength
+# rubocop:disable LineLength
 
 require_relative 'methods.rb'
 require_relative 'files.rb'
@@ -33,7 +34,7 @@ end
 # Cuenta las inasistencias totales
 def option2(arr_hash)
   puts 'Las inasistencias totales de los alumnos son: '
-  arr_hash.each { |nombre, notas| inasistencias_totales(nombre, notas) }
+  arr_hash.each { |alumno| inasistencias_totales(hash_data(alumno, :name), hash_data(alumno, :grades)) }
   inicio_programa(arr_hash)
 end
 
@@ -44,3 +45,4 @@ def option3(arr_hash)
 end
 
 # rubocop:enable MethodLength
+# rubocop:enable LineLength

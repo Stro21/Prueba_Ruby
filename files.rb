@@ -1,7 +1,6 @@
 # rubocop:disable MethodLength
 # rubocop:disable For
 # rubocop:disable LineLength
-# rubocop:disable AsciiComments
 
 require_relative 'methods.rb'
 require_relative 'program.rb'
@@ -67,9 +66,6 @@ def grade_list(grades)
     end
     i += 1
   end
-  # En mi laptop windows ocurre algo extraño y me agrega un elemento 0 extra.
-  # Debido a eso voy agregar una linea mas de código pero comentada.
-  # notas.pop
   notas
 end
 
@@ -100,4 +96,3 @@ end
 # rubocop:enable MethodLength
 # rubocop:enable For
 # rubocop:enable LineLength
-# rubocop:enable AsciiComments
